@@ -1,7 +1,7 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { PartService } from '../service/part.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Part } from '../models/part';
+
 
 @Component({
   selector: 'app-part-details',
@@ -9,17 +9,25 @@ import { Part } from '../models/part';
   styleUrls: ['./part-details.component.css']
 })
 export class PartDetailsComponent implements OnInit {
-id: number
-part: Part
+ part={id:"",partName:"",price:""}
 
-  constructor(private partService: PartService, private acticeRoute: ActivatedRoute, private router : Router) { }
+
+  constructor(private partService: PartService,private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.id = this.acticeRoute.snapshot.params['id'];
-    
-    this.partService.getPartById(this.id).subscribe(data => {
-      console.log(data);
-    });
+    let id = this.route.snapshot.paramMap.get('id');
+      console.log(id);
+    // this.partService.getPartById(id).subscribe(data =>{
+    //   console.log(data);
+  //});
+      this.partService.partDetails(id).subscribe(data =>{
+        this.part=data;
+        console.warn(data)
+        console.log(data)
+      });
   }
+
+  //{school.class.class1.division}
+  //[]
 
 }

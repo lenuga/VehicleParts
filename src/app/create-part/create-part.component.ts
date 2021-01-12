@@ -15,7 +15,7 @@ export class CreatePartComponent implements OnInit {
   submitted = false;
 
   constructor(private formBuilder: FormBuilder, private partService: PartService, private  toastr: ToastrService ,
-     private route: ActivatedRoute) { }
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
       this.partForm = this.formBuilder.group({
@@ -44,7 +44,7 @@ export class CreatePartComponent implements OnInit {
       this.submitted = true;
       // stop here if form is invalid
       if (this.partForm.invalid) {
-        this.toastr.error('please fill the all the fields');
+        this.toastr.error('please fill the all fields');
           return;
       }
       // display form values on success

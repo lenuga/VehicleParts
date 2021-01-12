@@ -9,17 +9,17 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatePartComponent } from './create-part/create-part.component';
-import { PartDetailsComponent } from './part-details/part-details.component';
 import { PartListComponent } from './part-list/part-list.component';
 import { UpdatePartComponent } from './update-part/update-part.component';
+import { PartDetailsComponent } from './part-details/part-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreatePartComponent,
-    PartDetailsComponent,
     PartListComponent,
     UpdatePartComponent,
+    PartDetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'part-list', component:  PartListComponent},
   { path: 'update-part', component: UpdatePartComponent},
   { path: 'create-part/:id',component: CreatePartComponent},
+  { path: 'part-details/:id', component:  PartDetailsComponent},
 ];
 
 

@@ -31,4 +31,9 @@ getPartById(id) {
   const url =`http://localhost:8080/parts/${id}`;
   return this.httpClient.get<any>(url);
 }
+
+ partDetails(id) {
+   const url = `http://localhost:8080/parts/${id}`;
+   return this.httpClient.get<any>(url);
+ }
 }
