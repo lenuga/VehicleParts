@@ -1,0 +1,30 @@
+
+<div class="card m-4">
+    <h5>Angular CRUD Operation with Reactive Form Validation</h5>
+    <div class="card-body">
+        <form [formGroup]="partForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                Part Name:
+                <input type="text" formControlName="partName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.partName.errors }" />
+                <div *ngIf="submitted && f.partName.errors" class="invalid-feedback">
+                    <div *ngIf="f.partName.errors.required">Part Name is required</div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                Price:
+                <input type="text" formControlName="price" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.price.errors }" />
+                <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                    <div *ngIf="f.price.errors.required">Price is required</div>
+                    <div *ngIf="f.price.errors.pattern">Number must be a valid </div>
+                </div>
+            </div>                 
+            <div class="text-center">
+                <button class="btn btn-success mr-1">Submit</button>
+                <button class="btn btn-danger mr-1"(click)="onReset()">reset</button>
+            </div>
+        </form>
+    </div>
+    <button routerLink="/" class="btn btn-primary mr-1">Back to Home</button>
+  </div>
+  

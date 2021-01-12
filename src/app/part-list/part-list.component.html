@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>Parts Lists</h2>  
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Part Name</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let part of parts; let i = index">
+          <td>{{part.id}}</td>
+          <td>{{part.partName}}</td>
+          <td>{{part.price}}</td>
+          <td>
+            
+            <button (click) = "deletePart(id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "updatePart()" class = "btn btn-warning" style="margin-left: 10px"> Update</button>
+            <button (click) = "partDetails()" class = "btn btn-success" style="margin-left: 10px"> View</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
