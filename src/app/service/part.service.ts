@@ -29,9 +29,6 @@ return this.httpClient.delete<any>(url);
 
 getPartById(id) {
   const url =`http://localhost:8080/parts/${id}`;
-  return this.httpClient.get<any>(url, id);
+  return this.httpClient.get<any>(url);
 }
-
-
-
 }

@@ -16,9 +16,9 @@
           <td>{{part.price}}</td>
           <td>
             
-            <button (click) = "deletePart(id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
-            <button (click) = "updatePart()" class = "btn btn-warning" style="margin-left: 10px"> Update</button>
-            <button (click) = "partDetails()" class = "btn btn-success" style="margin-left: 10px"> View</button>
+            <button (click) = "deletePart(part.id)" class = "btn btn-danger" style="margin-left: 10px"> Delete</button>
+            <button (click) = "updatePart(part.id)" class = "btn btn-warning" style="margin-left: 10px"> Update</button>
+            <button (click) = "partDetails(part.id)" class = "btn btn-success" style="margin-left: 10px"> View</button>
         </td>
         </tr>
       </tbody>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PartService } from '../service/part.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-part-list',
@@ -10,7 +11,7 @@ export class PartListComponent implements OnInit {
 
   parts: any[] = [];
 
-  constructor(private partService:PartService) { }
+  constructor(private partService:PartService, private router: Router) { }
 
   ngOnInit(): void {
       this.partService.getParts().subscribe(data => {
@@ -29,7 +30,7 @@ export class PartListComponent implements OnInit {
   }
 
  updatePart(id){
-   this.partService.updatePart
+  this.router.navigate(['/create-part/' + id]);
  }
 
 }
