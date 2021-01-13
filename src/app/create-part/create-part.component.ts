@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { PartService } from '../service/part.service';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-part',
@@ -15,7 +15,7 @@ export class CreatePartComponent implements OnInit {
   submitted = false;
 
   constructor(private formBuilder: FormBuilder, private partService: PartService, private  toastr: ToastrService ,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
       this.partForm = this.formBuilder.group({
@@ -60,6 +60,8 @@ export class CreatePartComponent implements OnInit {
       else{
         this.partService.createPart(this.partForm.value).subscribe(data => {
           this.toastr.success('Success!', 'Inserted successfully!');
+          //  &&  this.router.navigate(['/create-part/']);
+
         }); 
       }
   }

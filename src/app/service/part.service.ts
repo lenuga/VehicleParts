@@ -22,7 +22,6 @@ getParts() {
   return this.httpClient.get<any[]>(url);
 }
 deletePart(id) {
-  debugger
   const url =`http://localhost:8080/parts/delete/${id}`;
 return this.httpClient.delete<any>(url);
 }
@@ -36,4 +35,5 @@ getPartById(id) {
    const url = `http://localhost:8080/parts/${id}`;
    return this.httpClient.get<any>(url);
  }
+
 }

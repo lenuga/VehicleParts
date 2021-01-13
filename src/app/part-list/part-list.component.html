@@ -1,5 +1,6 @@
-<div class="form-group">
+<div class="form-group mr-1">
   <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+  <button (click)="searchByName()">Search</button>
 </div>
 <div class="container">
     <h2>Parts Lists</h2>  
@@ -13,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let part of parts | filter:term">
+        <tr *ngFor="let part of parts">
           <td>{{part.id}}</td>
           <td>{{part.partName}}</td>
           <td>{{part.price}}</td>

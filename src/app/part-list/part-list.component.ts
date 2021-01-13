@@ -9,11 +9,6 @@ import { Router } from '@angular/router';
 })
 export class PartListComponent implements OnInit {
   term: string;
-
-  patchValue(arg0: { id: any; partName: any; price: any; }) {
-    throw new Error("Method not implemented.");
-  }
-
   parts: any[] = [];
 
   constructor(private partService:PartService, private router: Router) { }
@@ -27,7 +22,6 @@ export class PartListComponent implements OnInit {
   deletePart(id) {
     this.partService.deletePart(id).subscribe(data =>{
       console.log(data);
-      this.getParts();
     });
  }
   getParts() {
@@ -41,5 +35,23 @@ export class PartListComponent implements OnInit {
  partDetails(id){
     this.router.navigate(['/part-details/' + id]);
  }
-
+  searchByName(){
+    if(this.term){
+      this.partService.getParts().subscribe(data => {
+        this.parts = data;
+        //  this.parts = this.parts.filter(p => p.partName == this.term);//If i type a Acqurate name
+        this.parts = this.parts.filter(p => p.partName.toLowerCase().includes(this.term.toLowerCase()));
+    });    
+    }else {
+      this.partService.getParts().subscribe(data => {
+        this.parts = data;
+    });
+    }
+    
+    
+  }
+// i=i+1;
 }
+
+
+
