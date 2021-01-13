@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./part-list.component.css']
 })
 export class PartListComponent implements OnInit {
-  
+  term: string;
+
   patchValue(arg0: { id: any; partName: any; price: any; }) {
     throw new Error("Method not implemented.");
   }
@@ -40,6 +41,5 @@ export class PartListComponent implements OnInit {
  partDetails(id){
     this.router.navigate(['/part-details/' + id]);
  }
-
 
 }

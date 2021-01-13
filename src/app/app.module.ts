@@ -12,6 +12,7 @@ import { CreatePartComponent } from './create-part/create-part.component';
 import { PartListComponent } from './part-list/part-list.component';
 import { UpdatePartComponent } from './update-part/update-part.component';
 import { PartDetailsComponent } from './part-details/part-details.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { PartDetailsComponent } from './part-details/part-details.component';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    Ng2SearchPipeModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
